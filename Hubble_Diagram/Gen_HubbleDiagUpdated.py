@@ -27,12 +27,12 @@ import pandas as pd
 
 # ---------- Import data ---------- #
 # Import data - Maria
-data = pd.read_csv("Hubble\ Diagram/hubble_diagram.txt", delimiter='\s+') 
+data = pd.read_csv("/home/s4649693/Getafix/Hubble_Diagram/hubble_diagram.txt", delimiter='\s+') 
 #np.genfromtxt("Hubble Diagram/hubble_diagram.txt",names=True,dtype=None, encoding=None, delimiter='\s')
 zz = data['zCMB']
 mu = data['MU']
 error = data['MUERR']
-cov_arr = np.genfromtxt("Hubble Diagram/covsys_000.txt",comments='#',dtype=None, skip_header=1)
+cov_arr = np.genfromtxt("/home/s4649693/Getafix/Hubble_Diagram/covsys_000.txt",comments='#',dtype=None, skip_header=1)
 cov = cov_arr.reshape(1867,1867)
 cov2 = np.diagonal(cov) 
 mu_diag = np.diag(error)**2
