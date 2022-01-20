@@ -52,6 +52,7 @@ params_all = []
 # Get Best fit params using MCMC for each model
 def get_bestfit(models, zz1, mu1, mu_error1, like):     # get_labels dont have marginalised value in but MCMC uses it
     for i, model in enumerate(models):
+        print('In_Progress_Model: %s' % (model.__name__))
         nsamples = int(1e5)
         label, begin, legend = get_info(model.__name__)
         params_begin = begin
@@ -65,6 +66,7 @@ def get_bestfit(models, zz1, mu1, mu_error1, like):     # get_labels dont have m
         #param = get_param(samples, label, model.__name__, 0)
         np.savetxt('/home/s4649693/Getafix/Hubble_Diagram/Chains_OUTPUT/%s_CHAIN_%s.txt' % (model.__name__, like) , samples, fmt="%10.4f")
         np.savetxt('/home/s4649693/Getafix/Hubble_Diagram/Chains_OUTPUT/%s_POSTERIOR_%s.txt' % (model.__name__, like) , pdf, fmt="%10.4f")
+        print('Done_Model: %s' % (model.__name__))
         #np.savetxt('Hubble Diagram/Chains_OUTPUT/%s_PARAMS_%s.txt' % (model.__name__, like) , param, fmt="%10.4f")
 
 
