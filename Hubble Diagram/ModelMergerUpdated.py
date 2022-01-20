@@ -5,7 +5,7 @@ import numpy as np
 from scipy.integrate import quad
 #from matplotlib import pyplot as plt
 from numpy.random import multivariate_normal, normal, seed
-from chainconsumer import ChainConsumer
+#from chainconsumer import ChainConsumer
 import emcee
 seed(0)
 

@@ -1,5 +1,5 @@
 #from matplotlib import pyplot as plt
-from chainconsumer import ChainConsumer
+#from chainconsumer import ChainConsumer
 from numpy.core.numeric import NaN
 import numpy as np
 from ModelMergerUpdated import *
@@ -87,13 +87,13 @@ def emcee_run(data_x, data_y, data_err, begin, nsamples, proposal_width, model, 
     pdf, blob = sampler.compute_log_prob(p0)
     return samples, samples1, pdf
 
-def get_param(samples, label, model, plot):
-    c = ChainConsumer()
-    c.add_chain(samples, parameters=label, linewidth=2.0, name="MCMC", kde=1.5, color="red").configure(summary=True,shade_alpha=0.3)
+#def get_param(samples, label, model, plot):
+#    c = ChainConsumer()
+#    c.add_chain(samples, parameters=label, linewidth=2.0, name="MCMC", kde=1.5, color="red").configure(summary=True,shade_alpha=0.3)
     #if int(plot) == 1:
     #    c.plotter.plot(figsize="COLUMN", chains="MCMC",filename='Model: %s' % model) 
     #    plt.close()
     params = []
-    for i, labelx in enumerate(label):
-        params.append(c.analysis.get_summary(chains="MCMC")[labelx][1])
-    return params
+#    for i, labelx in enumerate(label):
+#        params.append(c.analysis.get_summary(chains="MCMC")[labelx][1])
+#    return params
