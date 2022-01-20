@@ -1,4 +1,4 @@
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 from chainconsumer import ChainConsumer
 from numpy.core.numeric import NaN
 import numpy as np
@@ -72,7 +72,7 @@ def L_tot1(params, zz, mu, mu_err, model, begin):
 
 
 def emcee_run(data_x, data_y, data_err, begin, nsamples, proposal_width, model, liketype):
-    nwalkers = 100
+    nwalkers = 20
     ndim = len(begin)
     p0 = [np.array(begin) + 1e-5 * np.random.randn(ndim) for i in range(nwalkers)]
     if liketype == 'loglike':
@@ -90,9 +90,9 @@ def emcee_run(data_x, data_y, data_err, begin, nsamples, proposal_width, model, 
 def get_param(samples, label, model, plot):
     c = ChainConsumer()
     c.add_chain(samples, parameters=label, linewidth=2.0, name="MCMC", kde=1.5, color="red").configure(summary=True,shade_alpha=0.3)
-    if int(plot) == 1:
-        c.plotter.plot(figsize="COLUMN", chains="MCMC",filename='Model: %s' % model) 
-        plt.close()
+    #if int(plot) == 1:
+    #    c.plotter.plot(figsize="COLUMN", chains="MCMC",filename='Model: %s' % model) 
+    #    plt.close()
     params = []
     for i, labelx in enumerate(label):
         params.append(c.analysis.get_summary(chains="MCMC")[labelx][1])
