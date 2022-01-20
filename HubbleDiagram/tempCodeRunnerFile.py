@@ -1,1 +1,0 @@
-milne = LCDM(zz,[0,0]) 
