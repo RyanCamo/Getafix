@@ -72,7 +72,7 @@ def L_tot1(params, zz, mu, mu_err, model, begin):
 
 
 def emcee_run(data_x, data_y, data_err, begin, nsamples, proposal_width, model, liketype):
-    nwalkers = 20
+    nwalkers = 30
     ndim = len(begin)
     p0 = [np.array(begin) + 1e-5 * np.random.randn(ndim) for i in range(nwalkers)]
     if liketype == 'loglike':

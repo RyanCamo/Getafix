@@ -63,8 +63,8 @@ def get_bestfit(models, zz1, mu1, mu_error1, like):     # get_labels dont have m
         samples, samples1, pdf = emcee_run(zz1, mu1, mu_error1, params_begin1, nsamples, proposal, model, like)
         #params_all.append(get_param(samples, label, model.__name__, 0)) # 1 = plot contour, 0 = dont plot contour
         #param = get_param(samples, label, model.__name__, 0)
-        np.savetxt('Hubble Diagram/Chains_OUTPUT/%s_CHAIN_%s.txt' % (model.__name__, like) , samples, fmt="%10.4f")
-        np.savetxt('Hubble Diagram/Chains_OUTPUT/%s_POSTERIOR_%s.txt' % (model.__name__, like) , pdf, fmt="%10.4f")
+        np.savetxt('/home/s4649693/Getafix/Hubble_Diagram/Chains_OUTPUT/%s_CHAIN_%s.txt' % (model.__name__, like) , samples, fmt="%10.4f")
+        np.savetxt('/home/s4649693/Getafix/Hubble_Diagram/Chains_OUTPUT/%s_POSTERIOR_%s.txt' % (model.__name__, like) , pdf, fmt="%10.4f")
         #np.savetxt('Hubble Diagram/Chains_OUTPUT/%s_PARAMS_%s.txt' % (model.__name__, like) , param, fmt="%10.4f")
 
 
