@@ -27,7 +27,7 @@ import pandas as pd
 
 # ---------- Import data ---------- #
 # Import data - Maria
-data = pd.read_csv("Hubble Diagram/hubble_diagram.txt", delimiter='\s+') 
+data = pd.read_csv("Hubble\ Diagram/hubble_diagram.txt", delimiter='\s+') 
 #np.genfromtxt("Hubble Diagram/hubble_diagram.txt",names=True,dtype=None, encoding=None, delimiter='\s')
 zz = data['zCMB']
 mu = data['MU']
